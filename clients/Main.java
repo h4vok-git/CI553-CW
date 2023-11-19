@@ -36,7 +36,7 @@ class Main
 
   private final static boolean many = false;        // Many clients? (Or minimal clients)
 
-  public static void main (String args[])
+  public static void main (String[] args)
   {
     new Main().begin();
   }
@@ -52,7 +52,6 @@ class Main
     startCustomerGUI_MVC( mlf );
     if ( many ) 
      startCustomerGUI_MVC( mlf );
-    startCashierGUI_MVC( mlf );
     startCashierGUI_MVC( mlf );
     startBackDoorGUI_MVC( mlf );
     if ( many ) 
