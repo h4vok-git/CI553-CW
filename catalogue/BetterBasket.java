@@ -15,16 +15,16 @@ import java.util.Locale;
 public class BetterBasket extends Basket implements Serializable {
 
   @Override
-  public boolean add(Product p1) {
+  public boolean add(Product originalproduct) {
 
-    for (Product p2 : this) {
-      if (p1.getProductNum().equals(p2.getProductNum())) {
-        p2.setQuantity(p2.getQuantity() + p1.getQuantity());
+    for (Product newproduct : this) {
+      if (originalproduct.getProductNum().equals(newproduct.getProductNum())) {
+        newproduct.setQuantity(newproduct.getQuantity() + originalproduct.getQuantity());
         return (true);
       }
     }
 
-    super.add(p1);
+    super.add(originalproduct);
     return (true);
   }
 
