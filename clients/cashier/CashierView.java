@@ -21,8 +21,8 @@ public class CashierView implements Observer
   private static final int W = 400;       // Width  of window pixels
   
   private static final String CHECK  = "Check";
-  private static final String BUY    = "Buy";
-  private static final String BOUGHT = "Bought";
+  private static final String BUY    = "In Cart";
+  private static final String BOUGHT = "Purchase";
 
   private final JLabel      theAction  = new JLabel();
   private final JTextField  theInput   = new JTextField();
@@ -72,10 +72,12 @@ public class CashierView implements Observer
       e -> cont.doBuy() );
     cp.add( theBtBuy );                             //  Add to canvas
 
-    theBtBought.setBounds( 16, 25+60*3, 80, 40 );   // Clear Button
+    theBtBought.setBounds( 16, 25+60*3, 80, 40);   // Clear Button
     theBtBought.addActionListener(                  // Call back code
       e -> cont.doBought() );
     cp.add( theBtBought );                          //  Add to canvas
+    theBtBought.setBackground(Color.GREEN);         // Sets Bought button's background to Green
+    theBtBought.setFont(new Font("Arial", Font.BOLD, 10)); //Change font to Arial and set font size down to 10
 
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
     theAction.setText( "" );                        // Blank
